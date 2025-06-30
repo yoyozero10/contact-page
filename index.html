@@ -105,6 +105,7 @@
       box-shadow: 0 1px 4px #0003;
       display: block;
       text-align: left;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
     input:focus, textarea:focus {
       border: 1.5px solid #4e4fff;
@@ -148,6 +149,70 @@
       }
       h2 { font-size: 1.3rem; }
     }
+    .link-boxes {
+      width: 100%;
+      margin: 32px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+      max-width: 420px;
+    }
+    .link-box {
+      display: flex;
+      align-items: center;
+      background: #181920;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px #0005;
+      border: 1.5px solid #23242a;
+      padding: 14px 18px;
+      text-decoration: none;
+      transition: box-shadow 0.2s, border 0.2s, background 0.2s, transform 0.15s;
+      width: 100%;
+      max-width: 420px;
+      gap: 16px;
+      cursor: pointer;
+    }
+    .link-box:hover {
+      box-shadow: 0 4px 24px #4e4fff33, 0 2px 12px #0007;
+      border: 1.5px solid #4e4fff;
+      background: #23243a;
+      transform: translateY(-2px) scale(1.02);
+    }
+    .link-box-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #23242a;
+      border-radius: 10px;
+      box-shadow: 0 1px 6px #0004;
+      flex-shrink: 0;
+    }
+    .link-box-icon img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      display: block;
+    }
+    .link-box-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .link-box-title {
+      font-size: 1.08rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .link-box-url {
+      font-size: 0.98rem;
+      color: #4e4fff;
+      opacity: 0.85;
+      word-break: break-all;
+    }
   </style>
 </head>
 <body>
@@ -159,12 +224,30 @@
     <h2>Liên hệ với tôi</h2>
     <form action="https://formspree.io/f/movwrnwj" method="POST">
       <input type="text" name="name" placeholder="Tên của bạn" required>
-      <input type="email" name="email" required>
+      <input type="email" name="email" placeholder="Email của bạn" required>
       <textarea name="message" rows="5" placeholder="Nội dung liên hệ" required></textarea>
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://formspree.io/thanks">
       <button type="submit">Gửi liên hệ</button>
     </form>
+    <div class="link-boxes">
+      <a class="link-box" href="https://discord.gg/TRXhJufmcN" target="_blank" rel="noopener">
+        <div class="link-box-icon">
+          <img src="https://cdn.jsdelivr.net/gh/edent/SuperTinyIcons/images/svg/discord.svg" alt="Discord" />
+        </div>
+        <div class="link-box-content">
+          <div class="link-box-title">Tham Gia Nhóm Giao Lưu Trao Đổi Esport</div>
+        </div>
+      </a>
+      <a class="link-box" href="https://bit.ly/rb606880" target="_blank" rel="noopener">
+        <div class="link-box-icon">
+          <img src="raybet.jpg" alt="Raybet" />
+        </div>
+        <div class="link-box-content">
+          <div class="link-box-title">Đăng Kí Tài Khoản, Dự Đoán Thể Thao!</div>
+        </div>
+      </a>
+    </div>
   </div>
   <div class="footer">© 2024 pastnightly. All rights reserved.</div>
 </body>
