@@ -26,15 +26,12 @@
       border: 1.5px solid #23242a;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .contact-container::before {
-      content: '';
-      position: absolute;
-      top: -60px; left: -60px;
-      width: 180px; height: 180px;
-      background: radial-gradient(circle, #23242a 60%, transparent 100%);
-      opacity: 0.5;
-      z-index: 0;
+      display: none;
     }
     h2 {
       text-align: center;
@@ -60,6 +57,40 @@
       display: block;
       font-weight: 500;
     }
+    .brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      gap: 10px;
+      width: 100%;
+    }
+    .brand-logo {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px #000a;
+      border: 2.5px solid #23242a;
+      background: #181920;
+      display: block;
+      margin: 0 auto;
+    }
+    .brand-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #4e4fff;
+      letter-spacing: 2px;
+      text-shadow: 0 1px 8px #000a;
+      text-align: center;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     input, textarea {
       width: 100%;
       padding: 12px 14px;
@@ -72,6 +103,8 @@
       transition: border 0.2s, box-shadow 0.2s;
       outline: none;
       box-shadow: 0 1px 4px #0003;
+      display: block;
+      text-align: left;
     }
     input:focus, textarea:focus {
       border: 1.5px solid #4e4fff;
@@ -92,6 +125,9 @@
       box-shadow: 0 2px 8px #0005;
       letter-spacing: 1px;
       transition: background 0.2s, transform 0.15s;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
     button:hover {
       background: linear-gradient(90deg, #4e4fff 0%, #23242a 100%);
@@ -104,29 +140,6 @@
       font-size: 1rem;
       letter-spacing: 1px;
       opacity: 0.7;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      gap: 10px;
-    }
-    .brand-logo {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 2px 8px #000a;
-      border: 2.5px solid #23242a;
-      background: #181920;
-    }
-    .brand-name {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #4e4fff;
-      letter-spacing: 2px;
-      text-shadow: 0 1px 8px #000a;
     }
     @media (max-width: 600px) {
       .contact-container {
@@ -144,7 +157,6 @@
       <div class="brand-name">pastnightly</div>
     </div>
     <h2>Liên hệ với tôi</h2>
-    <div class="note">Vui lòng điền thông tin bên dưới để gửi liên hệ. Bạn không cần đăng nhập.</div>
     <form action="https://formspree.io/f/movwrnwj" method="POST">
       <input type="text" name="name" placeholder="Tên của bạn" required>
       <input type="email" name="email" required>
