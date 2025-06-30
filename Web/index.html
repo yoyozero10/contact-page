@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liên hệ với tôi</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f4f4; }
+    .contact-container { max-width: 400px; margin: 60px auto; background: #fff; padding: 32px; border-radius: 10px; box-shadow: 0 2px 8px #0001; }
+    h2 { text-align: center; }
+    input, textarea { width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc; }
+    button { width: 100%; padding: 12px; background: #007bff; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .note { font-size: 13px; color: #888; text-align: center; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <h2>Liên hệ với tôi</h2>
+    <div class="note">Vui lòng điền thông tin bên dưới để gửi liên hệ. Bạn không cần đăng nhập.</div>
+    <form action="https://formsubmit.co/doanductrung2102@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Tên của bạn" required>
+      <input type="email" name="email" placeholder="Email của bạn" required>
+      <textarea name="message" rows="5" placeholder="Nội dung liên hệ" required></textarea>
+      <!-- Không cho bot spam -->
+      <input type="hidden" name="_captcha" value="false">
+      <!-- Sau khi gửi sẽ chuyển đến trang cảm ơn -->
+      <input type="hidden" name="_next" value="https://formsubmit.co/thanks.html">
+      <button type="submit">Gửi liên hệ</button>
+    </form>
+  </div>
+</body>
+</html> 
