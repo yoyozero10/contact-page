@@ -5,29 +5,155 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Liên hệ với tôi</title>
   <style>
-    body { font-family: Arial, sans-serif; background: #f4f4f4; }
-    .contact-container { max-width: 400px; margin: 60px auto; background: #fff; padding: 32px; border-radius: 10px; box-shadow: 0 2px 8px #0001; }
-    h2 { text-align: center; }
-    input, textarea { width: 100%; padding: 10px; margin: 8px 0; border-radius: 5px; border: 1px solid #ccc; }
-    button { width: 100%; padding: 12px; background: #007bff; color: #fff; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
-    button:hover { background: #0056b3; }
-    .note { font-size: 13px; color: #888; text-align: center; margin-bottom: 10px; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #111216;
+      color: #f1f1f1;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .contact-container {
+      max-width: 420px;
+      margin: 60px auto;
+      background: #181920;
+      padding: 36px 32px 28px 32px;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px #0008, 0 1.5px 0 #222 inset;
+      border: 1.5px solid #23242a;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-container::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: -60px;
+      width: 180px; height: 180px;
+      background: radial-gradient(circle, #23242a 60%, transparent 100%);
+      opacity: 0.5;
+      z-index: 0;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.1rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 0 2px 12px #000a;
+    }
+    .note {
+      font-size: 14px;
+      color: #aaa;
+      text-align: center;
+      margin-bottom: 18px;
+      z-index: 1;
+      position: relative;
+    }
+    label {
+      font-size: 1rem;
+      color: #e0e0e0;
+      margin-bottom: 4px;
+      display: block;
+      font-weight: 500;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      margin: 10px 0 18px 0;
+      border-radius: 7px;
+      border: 1.5px solid #23242a;
+      background: #23242a;
+      color: #f1f1f1;
+      font-size: 1rem;
+      transition: border 0.2s, box-shadow 0.2s;
+      outline: none;
+      box-shadow: 0 1px 4px #0003;
+    }
+    input:focus, textarea:focus {
+      border: 1.5px solid #4e4fff;
+      box-shadow: 0 0 0 2px #4e4fff33;
+      background: #23243a;
+    }
+    button {
+      width: 100%;
+      padding: 13px;
+      background: linear-gradient(90deg, #23242a 0%, #4e4fff 100%);
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 8px;
+      box-shadow: 0 2px 8px #0005;
+      letter-spacing: 1px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #4e4fff 0%, #23242a 100%);
+      transform: translateY(-2px) scale(1.03);
+    }
+    .footer {
+      margin-top: 32px;
+      text-align: center;
+      color: #666;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      opacity: 0.7;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      gap: 10px;
+    }
+    .brand-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px #000a;
+      border: 2.5px solid #23242a;
+      background: #181920;
+    }
+    .brand-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #4e4fff;
+      letter-spacing: 2px;
+      text-shadow: 0 1px 8px #000a;
+    }
+    @media (max-width: 600px) {
+      .contact-container {
+        padding: 18px 6vw 18px 6vw;
+        max-width: 98vw;
+      }
+      h2 { font-size: 1.3rem; }
+    }
   </style>
 </head>
 <body>
   <div class="contact-container">
+    <div class="brand">
+      <img src="img.jpg" alt="Logo pastnightly" class="brand-logo">
+      <div class="brand-name">pastnightly</div>
+    </div>
     <h2>Liên hệ với tôi</h2>
     <div class="note">Vui lòng điền thông tin bên dưới để gửi liên hệ. Bạn không cần đăng nhập.</div>
-    <form action="https://formsubmit.co/doanductrung2102@gmail.com" method="POST">
+    <form action="https://formspree.io/f/movwrnwj" method="POST">
       <input type="text" name="name" placeholder="Tên của bạn" required>
-      <input type="email" name="email" placeholder="Email của bạn" required>
+      <input type="email" name="email" required>
       <textarea name="message" rows="5" placeholder="Nội dung liên hệ" required></textarea>
-      <!-- Không cho bot spam -->
       <input type="hidden" name="_captcha" value="false">
-      <!-- Sau khi gửi sẽ chuyển đến trang cảm ơn -->
-      <input type="hidden" name="_next" value="https://formsubmit.co/thanks.html">
+      <input type="hidden" name="_next" value="https://formspree.io/thanks">
       <button type="submit">Gửi liên hệ</button>
     </form>
   </div>
+  <div class="footer">© 2024 pastnightly. All rights reserved.</div>
 </body>
 </html> 
